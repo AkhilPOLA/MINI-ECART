@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .header{
+             height: 130px;
+             width:1465px;
+           
+             background-color: #0C2340;
+             border-color:rgb(19,51,15);
+            border-radius: 10px;
+            border-style: solid;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: azure;
+        }
+        .logo{
+      position: absolute; 
+      top: 13px;
+      left: 630px;
+        height: 120px;
+        width:170px;
+       }
+        .funk{
+           
+        border-radius: 6px;
+        border-style: solid;
+        margin-bottom: 10px;
+        border-width: 3px;
+        border-color: #0C2340;
+         height: 25px;
+         width: 450px;
+         padding: 15px 10px;
+         font-size: 14px;
+         
+    }
+    .sub{
+        margin: 40px 210px;
+        border-radius: 8px;
+        background-color: #0C2340;
+             border-color:rgb(19,51,15);
+        height: 50px;
+        width: 140px;
+        color: azure;
+        font-size: 20px;
+    }
+    .akhil{
+
+        margin:30px auto;
+        padding:40px 70px 70px 70px;
+       
+        
+        border-style: solid;
+        border-width: 8px;
+        border-radius: 6px;
+        border-color:#0C2340;
+        height: auto;
+        width: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <img class="logo" src="logo.png" alt="BLAH-BLAH">
+        <form class="akhil" action="shop" method="post" >
+            <h2 style="margin-left: 500px;">REGISTRATION-FORM</h2> <br><br>
+           <label for="Fname" style="font-size: 25px;"><strong> First Name: </strong></label>
+           <input type="text"class="funk" name="Fname" style="margin-left: 120px;"placeholder="Enter your First Name" required> <br> <br>
+           <label for="Lname" style="font-size: 25px;"><strong>Last Name:</strong></label>
+           <input type="text" class="funk" name="Lname" style="margin-left: 125px;"placeholder="Enter your Last Name" required> <br> <br>
+           <label for="Country" style="font-size: 25px;"><strong>Country name:</strong></label>
+           <input type="text" class="funk" name="Country" style="margin-left: 80px;"placeholder="Enter your Country Name" required> <br> <br>
+           <label for="Email" style="font-size: 25px;"><strong>Email:</strong></label>
+           <input type="text" class="funk" name="Email" style="margin-left: 180px;"placeholder="Enter your Email" required> <br> <br>
+           <label for="Mobilenum" style="font-size: 25px;"><strong>Phone number:</strong></label>
+           <input type="text" class="funk" name="Mobilenum" style="margin-left: 70px;"placeholder="Enter your Mobile number" required> <br> <br>
+           <label for="Address" style="font-size: 25px;"><strong>What type of Products do you want to sell?Give us a description below</strong></label> <br><br>
+           <textarea name="Address" name="address" cols="105" rows="10" style="     
+           border-radius: 6px;
+           border-style: solid;
+           margin-bottom: 10px;
+           border-width: 3px;
+           border-color: black;" required></textarea> <br> <br>
+           <label for="Pincode" style="font-size: 25px;"><strong>PIN Code:</strong></label>
+           <input type="text" class="funk" name="Mobilenum" style="margin-left: 130px;"placeholder="Enter pincode" required> <br> <br>
+           <label for="password" style="font-size: 25px;"><strong>Password:</strong></label>
+           <input type="password" class="funk" name="password" style="margin-left: 125px;"placeholder="Enter password here" required> <br> <br>
+           <label for="reenterpassword" style="font-size: 25px;"><strong>Re-Enter Password:</strong></label>
+           <input type="password" class="funk" name="reenterpassword" style="margin-left: 15px;"placeholder="Enter password again" required> <br> <br>
+           <input type="checkbox" id="termsAgreement" required>
+           <label for="termsAgreement">I agree to the <a href="termsandconditions.html" target="_blank">Terms and Conditions</a></label> <br> <br>
+
+            
+             <input class="sub" type="submit" value="Save details">
+        </form>
+         <div class="footer" style="background-color: #333; color: #fff; text-align: center; padding: 10px;">
+        <p><a href="aboutUs.jsp" style="color: #fff; text-decoration: none;">About Us</a></p>
+        <p>Follow Us:</p>
+        <a href="https://www.facebook.com/your-facebook-page" style="color: #fff; text-decoration: none; margin: 0 10px;">Facebook</a>
+        <!-- Add links to other social media platforms as needed -->
+        <p>&copy; SKYPIEA-MART. All Rights Reserved.</p>
+        <img src="copyright.png" alt="Copyright" style="height: 20px;">
+    </div>
+      
+    <script>
+		
+        function validateForm() {
+            var fname = document.getElementById("Fname").value;
+            var lname = document.getElementById("Lname").value;
+            var country = document.getElementById("Country").value;
+            var email = document.getElementById("Email").value;
+            var phone = document.getElementById("Mobilenum").value;
+            var pincode = document.getElementById("Pincode").value;
+            var password = document.getElementById("password").value;
+           
+            var reenterPassword = document.getElementById("reenterPassword").value;
+
+            // Regular expressions for validation
+            var nameRegex = /^[A-Za-z]+$/;
+            var emailRegex = /@gmail\.com$/;
+            var phoneRegex = /^\d{10}$/;
+            var pincodeRegex = /^\d{6}$/;
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/;
+
+            // First Name, Last Name, and Country should only contain alphabets
+            if (!fname.match(nameRegex) || !lname.match(nameRegex) || !country.match(nameRegex)) {
+                alert("First Name, Last Name, and Country should only contain alphabets.");
+                return false;
+            }
+
+            // Email should end with @gmail.com
+            if (!email.match(emailRegex)) {
+                alert("Email should end with @gmail.com.");
+                return false;
+            }
+
+            // Phone Number must contain 10 digits
+            if (!phone.match(phoneRegex)) {
+                alert("Phone Number must contain 10 digits.");
+                return false;
+            }
+
+            // PIN Code must contain 6 digits
+            if (!pincode.match(pincodeRegex)) {
+                alert("PIN Code must contain 6 digits.");
+                return false;
+            }
+
+            // Password must contain at least one uppercase, one lowercase, one digit,
+            // one special character, and be at least 8 characters long
+            if (!password.match(passwordRegex)) {
+                alert("Password must contain at least one uppercase, one lowercase, one digit, one special character, and be at least 8 characters long.");
+                return false;
+            }
+            if (password !== reenterPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script> 
+    
+    
+</body>
+</html>
+

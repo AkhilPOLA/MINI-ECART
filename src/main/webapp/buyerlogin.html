@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .header{
+             height: 130px;
+             width:autopx;
+           
+             background-color: #0C2340;
+             border-color:rgb(19,51,15);
+            border-radius: 10px;
+            border-style: solid;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: azure;
+        }
+        .logo{
+      position: absolute; 
+      top: 13px;
+      left: 630px;
+        height: 120px;
+        width:170px;
+       }
+        .funk{
+           
+        border-radius: 6px;
+        border-style: solid;
+        margin-bottom: 10px;
+        border-width: 3px;
+        border-color:#0C2340;
+         height: 25px;
+         width: 310px;
+         padding: 15px 10px;
+         font-size: 14px;
+         
+    }
+    .sub{
+        margin: 40px 210px;
+        border-radius: 8px;
+        background-color:#0C2340;
+             border-color:rgb(19,51,15);
+        height: 50px;
+        width: 140px;
+        color: azure;
+        font-size: 20px;
+    }
+    .akhil{
+        
+        margin:30px auto;
+        padding:60px 70px 70px 70px;
+       
+        
+        border-style: solid;
+        border-width: 8px;
+        border-radius: 6px;
+        border-color: #0C2340;
+        height: 300px;
+        width: 530px;
+    }
+    </style> 
+</head>
+<body>
+    <div class="header"></div>
+    <img class="logo" src="logo.png" alt="BLAH-BLAH">
+    <div id="successMessage" style="display: none; background-color: #4CAF50; color: white; padding: 10px; text-align: center;">
+        <h1>Registered Successfully</h1>
+        <p>Now you can login.</p>
+    </div> 
+        <form class="akhil" action="buyer-login-servlet" method="post" onsu onsubmit="validateForm">
+            <h2>ENTER YOUR LOGIN DETAILS HERE::</h2> <br><br>
+           <label for="emailorpho" style="font-size: 16px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email : </strong></label>
+           <input type="text"class="funk" name="emailorpho" style="margin-left: 100px;" placeholder="Enter here"> <br> <br>
+           <label for="password" style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Password:</strong></label>
+           <input type="text" class="funk" name="password" style="margin-left: 80px;"placeholder="Enter password here">
+            <input type="submit" class="sub" value="Login">
+        </form>
+        <p style="margin-top:20px; margin-left: 420px;"><strong>------------------------------------------NEW TO SKYPIEA-MART?--------------------------------------------</strong></p>
+        <a href="buyerregistration.html" style=" color: black; margin-left: 700px;"><strong>REGISTER HERE</strong></a>
+   <div class="footer" style="background-color: #333; color: #fff; text-align: center; padding: 10px;">
+        <p><a href="aboutUs.jsp" style="color: #fff; text-decoration: none;">About Us</a></p>
+        <p>Follow Us:</p>
+        <a href="https://www.facebook.com/your-facebook-page" style="color: #fff; text-decoration: none; margin: 0 10px;">Facebook</a>
+        <!-- Add links to other social media platforms as needed -->
+        <p>&copy;SKYPIEA-MART. All Rights Reserved.</p>
+        <img src="copyright.png" alt="Copyright" style="height: 20px;">
+    </div>
+    
+    <script> 
+		function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        function showSuccessMessage() {
+            var registration = getParameterByName('registration');
+            if (registration === 'success') {
+                var successMessage = document.getElementById('successMessage');
+                successMessage.style.display = 'block';
+
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 3000); // Display for 3 seconds
+            }
+        }
+        function validateForm() {
+        var email = document.forms["loginForm"]["emailorpho"].value;
+        var password = document.forms["loginForm"]["password"].value;
+
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+
+        if (password == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+        return true;
+    }
+
+        // Call the showSuccessMessage function when the page loads
+        window.onload = showSuccessMessage;</script>
+</body>
+
+</html>
+
